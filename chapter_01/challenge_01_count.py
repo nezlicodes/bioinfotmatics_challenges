@@ -3,4 +3,4 @@ import re;
 def count(text, pattern):
     return re.subn(pattern, '', text, flags=re.IGNORECASE)[1]
 
-print(count('ATCGATATat', 'AT'))
+print(count('ACAACTATGCATACTATCGGGAACTATCCT' , 'ACTAT'))

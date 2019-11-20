@@ -10,6 +10,11 @@ def mostFrequentWord(text, k):
     for i in range((len(text))-limit):
         k_mers.append(text[i:i+k])
     #Find most frequent k_mer
-    print(Counter(k_mers).most_common(1)[0][0])
+    return(Counter(k_mers).most_common(1)[0])
 
-mostFrequentWord('atcaatgatcaacgtaagcttctaagcATGATCAAGgtgctcacacagtttatccacaacctgagtggatgacatcaagataggtcgttgtatctccttcctctcgtactctcatgaccacggaaagATGATCAAGagaggatgatttcttggccatatcgcaatgaatacttgtgacttgtgcttccaattgacatcttcagcgccatattgcgctggccaaggtgacggagcgggattacgaaagcatgatcatggctgttgttctgtttatcttgttttgactgagacttgttaggatagacggtttttcatcactgactagccaaagccttactctgcctgacatcgaccgtaaattgataatgaatttacatgcttccgcgacgatttacctcttgatcatcgatccgattgaagatcttcaattgttaattctcttgcctcgactcatagccatgatgagctcttgatcatgtttccttaaccctctattttttacggaagaATGATCAAGctgctgctcttgatcatcgtttc',5);
+mostFrequentWord('atcaatgatcaacgttaaaatatatattatatatatatatataagcttctaagcATGATCAAGgtgctcacacagtttatccacaacctgagtggatgacatcaagataggtcgttgtatctccttcctctcgtactctcatgaccacggaaagATGATCAAGagaggatgatttcttggccatatcgcaatgaatacttgtgacttgtgcttccaattgacatcttcagcgccatattgcgctggccaaggtgacggagcgggattacgaaagcatgatcatggctgttgttctgtttatcttgttttgactgagacttgttaggatagacggtttttcatcactgactagccaaagccttactctgcctgacatcgaccgtaaattgataatgaatttacatgcttccgcgacgatttacctcttgatcatcgatccgattgaagatcttcaattgttaattctcttgcctcgactcatagccatgatgagctcttgatcatgtttccttaaccctctattttttacggaagaATGATCAAGctgctgctcttgatcatcgtttc',5);
+
+## Update for clump finding problem
+def clump_finding(seq, k):
+    return "{} ({}, {})clump".format(mostFrequentWord(seq, k)[0], len(seq),mostFrequentWord(seq, k)[1])
+print(clump_finding('gatcagcataagggtccCTGCAATGCATGACAAGCCTGCAGTtgttttac', 4))

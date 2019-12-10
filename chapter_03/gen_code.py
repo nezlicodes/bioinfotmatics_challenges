@@ -1,7 +1,4 @@
-file = open('dnaSeq.txt')
-dnaSeq = file.read()
-file.close();
-STANDARD_GENETIC_CODE = {
+gen_code = {
     'ATA':'I', 'ATC':'I', 'ATT':'I', 'ATG':'M',
     'ACA':'T', 'ACC':'T', 'ACG':'T', 'ACT':'T',
     'AAC':'N', 'AAT':'N', 'AAA':'K', 'AAG':'K',
@@ -17,16 +14,5 @@ STANDARD_GENETIC_CODE = {
     'TCA':'S', 'TCC':'S', 'TCG':'S', 'TCT':'S',
     'TTC':'F', 'TTT':'F', 'TTA':'L', 'TTG':'L',
     'TAC':'Y', 'TAT':'Y', 'TAA':'_', 'TAG':'_',
-    'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W'}
-
-def tranlateRNA(rnaSeq):
-    proteinSeq = '';
-    i = 0;
-    while i+3 < len(rnaSeq):
-        codon = rnaSeq[i:i+3]
-        peptide = STANDARD_GENETIC_CODE[codon]
-        if peptide is None:
-            break;
-        proteinSeq += peptide
-        i +=3;
-    return proteinSeq
+    'TGC':'C', 'TGT':'C', 'TGA':'_', 'TGG':'W'
+}
